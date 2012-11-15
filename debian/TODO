@@ -1,0 +1,4 @@
+
+Add the following tags at http://debtags.debian.net/edit/ when package is in Debian:
+
+protocol::tcp, protocol::udp, network::service, role::devel-lib, role::shared-lib, works-with-format::json, devel::rpc, devel::lang:c++, devel::library, implemented-in::c++, 

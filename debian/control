@@ -1,0 +1,37 @@
+Source: librcf-cpp1.3.1
+Priority: extra
+Maintainer: Marius Kotsbak <marius@kotsbak.com>
+Build-Depends: debhelper (>= 9.20120417), cmake (>= 2.6.0), libboost-dev (>= 1.33.0), g++-4.6
+Standards-Version: 3.9.3
+Section: libs
+Homepage: http://www.deltavsoft.com/
+#Vcs-Git: git://git.debian.org/collab-maint/librcf-cpp.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/librcf-cpp.git;a=summary
+
+Package: librcf-cpp1.3.1-dev
+Section: libdevel
+Architecture: any
+Depends: librcf-cpp1.3.1 (= ${binary:Version}), ${misc:Depends}
+Provides: librcf-cpp-dev
+Conflicts: librcf-cpp-dev
+Description: Remote Call Framework is a portable IPC/RPC framework for C++ applications
+ Remote Call Framework (RCF) is a IPC/RPC framework tailored
+ for C++ applications.
+ .
+  * Wide range of IPC and RPC techniques
+  * Seamless integration with C++ applications.
+  * Portable, efficient and scalable.
+  * Used in major software applications around the world.
+
+Package: librcf-cpp1.3.1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Remote Call Framework is a portable IPC/RPC framework for C++ applications
+ Remote Call Framework (RCF) is a IPC/RPC framework tailored
+ for C++ applications.
+ .
+  * Wide range of IPC and RPC techniques.
+  * Seamless integration with C++ applications.
+  * Portable, efficient and scalable.
+  * Used in major software applications around the world.
