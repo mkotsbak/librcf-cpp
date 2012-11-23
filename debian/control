@@ -1,7 +1,7 @@
 Source: librcf-cpp1.3.1
 Priority: extra
 Maintainer: Marius Kotsbak <marius@kotsbak.com>
-Build-Depends: debhelper (>= 9.20120417), cmake (>= 2.6.0), libboost-dev (>= 1.33.0), libboost-serialization-dev (>= 1.33.0), libboost-system-dev (>= 1.33.0), libssl-dev (>= 1.0.0), zlib1g-dev (>= 1:1.2.3), g++-4.6
+Build-Depends: debhelper (>= 8.0.0), cmake (>= 2.6.0), libboost-dev (>= 1.33.0), libboost-serialization-dev (>= 1.33.0), libboost-system-dev (>= 1.33.0), libssl-dev (>= 1.0.0), zlib1g-dev (>= 1:1.2.3), hardening-wrapper, g++-4.6
 Standards-Version: 3.9.3
 Section: libs
 Homepage: http://www.deltavsoft.com/
