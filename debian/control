@@ -16,12 +16,14 @@ Provides: librcf-cpp-dev
 Conflicts: librcf-cpp-dev
 Description: Remote Call Framework is a portable IPC/RPC framework for C++ applications
  Remote Call Framework (RCF) is a IPC/RPC framework tailored
- for C++ applications.
+ for C++ applications:
  .
   * Wide range of IPC and RPC techniques
   * Seamless integration with C++ applications.
   * Portable, efficient and scalable.
   * Used in major software applications around the world.
+ .
+ This package includes development libraries and header files.
 
 Package: librcf-cpp1.3.1
 Section: libs
@@ -29,7 +31,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Remote Call Framework is a portable IPC/RPC framework for C++ applications
  Remote Call Framework (RCF) is a IPC/RPC framework tailored
- for C++ applications.
+ for C++ applications:
  .
   * Wide range of IPC and RPC techniques.
   * Seamless integration with C++ applications.
