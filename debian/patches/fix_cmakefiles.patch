@@ -6,8 +6,8 @@ Author: Marius Kotsbak <marius@kotsbak.com>
 Bug-Debian: http://bugs.debian.org/692563
 
 --- /dev/null
-+++ librcf-cpp1.3.1-1.3.1/CMakeLists.txt
-@@ -0,0 +1,33 @@
++++ b/CMakeLists.txt
+@@ -0,0 +1,32 @@
 +
 +CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 +
@@ -30,7 +30,6 @@ Bug-Debian: http://bugs.debian.org/692563
 +    RCF_INCLUDES 
 +    ${RCF_ROOT}/include)
 +
-+
 +ADD_SUBDIRECTORY(RcfLib)
 +ADD_SUBDIRECTORY(RcfDll)
 +#ADD_SUBDIRECTORY(DemoClient)
@@ -42,8 +41,8 @@ Bug-Debian: http://bugs.debian.org/692563
 +  PROPERTIES
 +    SOVERSION ${RCF_VERSION})
 --- /dev/null
-+++ librcf-cpp1.3.1-1.3.1/RcfLib/CMakeLists.txt
-@@ -0,0 +1,18 @@
++++ b/RcfLib/CMakeLists.txt
+@@ -0,0 +1,32 @@
 +
 +ADD_DEFINITIONS( ${RCF_DEFINES} )
 +
@@ -56,6 +55,20 @@ Bug-Debian: http://bugs.debian.org/692563
 +    STATIC 
 +    ${RCF_ROOT}/src/RCF/RCF.cpp)
 +
++SET(Boost_USE_STATIC_LIBS ON)
++SET(Boost_USE_STATIC_RUNTIME ON)
++find_package( Boost 1.33.0 COMPONENTS serialization system REQUIRED)
++TARGET_LINK_LIBRARIES( rcf-cpp-static ${Boost_LIBRARIES} )
++
++find_package(Threads REQUIRED)
++target_link_libraries( rcf-cpp-static ${CMAKE_THREAD_LIBS_INIT} )
++
++find_package(OpenSSL REQUIRED)
++target_link_libraries( rcf-cpp-static ${OPENSSL_LIBRARIES} )
++
++find_package(ZLIB REQUIRED)
++target_link_libraries( rcf-cpp-static ${ZLIB_LIBRARIES} )
++
 +INSTALL(TARGETS rcf-cpp-static
 +  ARCHIVE DESTINATION lib RENAME rcf-cpp)
 +
@@ -63,8 +76,8 @@ Bug-Debian: http://bugs.debian.org/692563
 +  PROPERTIES
 +    OUTPUT_NAME rcf-cpp)
 --- /dev/null
-+++ librcf-cpp1.3.1-1.3.1/RcfDll/CMakeLists.txt
-@@ -0,0 +1,23 @@
++++ b/RcfDll/CMakeLists.txt
+@@ -0,0 +1,36 @@
 +
 +ADD_DEFINITIONS(
 +    -DRCF_BUILD_DLL 
@@ -85,6 +98,19 @@ Bug-Debian: http://bugs.debian.org/692563
 +    rcf-cpp
 +    SHARED 
 +    ${RCF_ROOT}/src/RCF/RCF.cpp)
++
++SET(Boost_USE_STATIC_RUNTIME OFF)
++find_package( Boost 1.33.0 COMPONENTS serialization system REQUIRED)
++TARGET_LINK_LIBRARIES( rcf-cpp ${Boost_LIBRARIES} )
++
++find_package(Threads REQUIRED)
++target_link_libraries( rcf-cpp ${CMAKE_THREAD_LIBS_INIT} )
++
++find_package(OpenSSL REQUIRED)
++target_link_libraries( rcf-cpp ${OPENSSL_LIBRARIES} )
++
++find_package(ZLIB REQUIRED)
++target_link_libraries( rcf-cpp ${ZLIB_LIBRARIES} )
 +
 +INSTALL(TARGETS rcf-cpp
 +  LIBRARY DESTINATION lib)
