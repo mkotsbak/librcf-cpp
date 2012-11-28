@@ -4,7 +4,7 @@ Source: <http://www.deltavsoft.com/download.html>
 
 Files: *
 Copyright: 2005-2012 Delta V Software, Jarl Lindrud <jarl.lindrud@deltavsoft.com>
-License: GPL-2
+License: GPL-2 with OpenSSL exception
 
 Files: debian/*
 Copyright: 2012 Marius Kotsbak <marius@kotsbak.com>
@@ -27,10 +27,17 @@ License: GPL-2.0+
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
-License: GPL-2
+License: GPL-2 with OpenSSL exception
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation; version 2 of the License.
+ .
+ In addition, as a special exception, Delta V Software grants you permission
+ to combine RCF with code included in the standard release of OpenSSL under
+ the OpenSSL License (or modified versions of such code, with unchanged license).
+ You may copy and distribute such a system following the terms of the GNU General
+ Public License version 2 for RCF, and which follows the OpenSSL License for the
+ OpenSSL code concerned.
  .
  This program is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
