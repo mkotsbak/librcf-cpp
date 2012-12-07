@@ -16,4 +16,7 @@ export DEB_BUILD_HARDENING=1
 
 override_dh_auto_configure:
 # build error with g++ 4.7, so force using 4.6
-	CXX=g++-4.6 dh_auto_configure
+	CXX=g++-4.6 dh_auto_configure -- -DCMAKE_BUILD_TYPE=Debug
+
+override_dh_strip:
+	dh_strip --dbg-package=librcf-cpp1.3.1-dbg
